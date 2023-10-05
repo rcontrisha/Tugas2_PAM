@@ -380,7 +380,7 @@ class _LoginState extends State<Login> {
                                     backgroundColor: Colors.redAccent,
                                   );
                                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                                };
+                                }
                               },
                               style: ElevatedButton.styleFrom(
                                   primary: Color(0xFF4E0189), // Background color
