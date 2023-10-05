@@ -559,149 +559,123 @@ class _BerandaState extends State<Beranda> {
         backgroundColor: Color(0xFF4E0189),
         foregroundColor: Colors.white ,
       ),
-      body: GridView(
-        gridDelegate:
-        SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        children: <Widget>[
-          InkWell(
-            borderRadius: BorderRadius.circular(30),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => DataKelompok()));
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.list_alt,
-                    size: 70,
+      body: Center(
+        child: SizedBox(
+          child: ListView(
+            children: <Widget>[
+              InkWell(
+                borderRadius: BorderRadius.circular(30),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DataKelompok()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.list_alt,
+                        size: 70,
+                      ),
+                      Text(
+                          'Daftar Anggota Kelompok',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 18,
+                          ),
+                          textAlign: TextAlign.center,
+                      )
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0,15,0,0),
-                    child: Text(
-                        'Daftar Anggota Kelompok',
+                ),
+              ),
+              InkWell(
+                borderRadius: BorderRadius.circular(30),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => StopwatchApp()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.access_alarm,
+                        size: 70,
+                      ),
+                      Text(
+                        'Stopwatch',
                         style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 18,
+                            fontWeight: FontWeight.w300,
+                            fontSize: 18
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              InkWell(
+                borderRadius: BorderRadius.circular(30),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Rekomendasi()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.thumb_up_alt_outlined,
+                        size: 70,
+                      ),
+                      Text(
+                        'Situs Rekomendasi',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 18
                         ),
                         textAlign: TextAlign.center,
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            borderRadius: BorderRadius.circular(30),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => StopwatchApp()));
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.access_alarm,
-                    size: 70,
+                      )
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0,15,0,0),
-                    child: Text(
-                      'Stopwatch',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 18
-                      ),
-                    ),
-                  )
-                ],
+                ),
               ),
-            ),
-          ),
-          InkWell(
-            borderRadius: BorderRadius.circular(30),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Rekomendasi()));
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.thumb_up_alt_outlined,
-                    size: 70,
+              InkWell(
+                borderRadius: BorderRadius.circular(30),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Favorit()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.bookmark_added_outlined,
+                        size: 70,
+                      ),
+                      Text(
+                        'Favorit',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 18
+                        ),
+                      )
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0,15,0,0),
-                    child: Text(
-                      'Situs Rekomendasi',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 18
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  )
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-          InkWell(
-            borderRadius: BorderRadius.circular(30),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Favorit()));
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.bookmark_added_outlined,
-                    size: 70,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0,15,0,0),
-                    child: Text(
-                      'Favorit',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 18
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Color(0xFF4E0189),
         currentIndex: _currentIndex,
         onTap: (index) {
-          if (index == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Panduan()),
-            );
+          if (index == 2) {
+            _showLogoutDialog(context);
+          } else {
+            setState(() {
+              _currentIndex = index;
+            });
           }
-          else if (index == 2) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => MyApp()),
-            );
-          }
-          setState(() {
-            _currentIndex = index;
-          });
         },
         items: [
           BottomNavigationBarItem(
@@ -721,6 +695,39 @@ class _BerandaState extends State<Beranda> {
           ),
         ],
       ),
+    );
+  }
+  void _showLogoutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Logout'),
+          content: Text('Are you sure you want to log out?'),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text('Logout'),
+              onPressed: () {
+                // Perform logout actions here
+                // For example, navigate to login screen or clear user data
+                // Navigate to the login screen
+                Navigator.of(context).pop(); // Close the dialog
+                // Add your logout logic here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyApp()),
+                );
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }
@@ -1062,8 +1069,43 @@ class _PanduanState extends State<Panduan> {
         backgroundColor: Color(0xFF4E0189),
         foregroundColor: Colors.white,
       ),
-      body: Container(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(
+          children: [
+            _buildStep('Login', [
+              'Buka aplikasi dan Anda akan diarahkan ke halaman login.',
+              'Masukkan kredensial login Anda (username dan password).',
+              'Tekan tombol "Login" untuk masuk ke dalam aplikasi.'
+            ]),
+            _buildStep('Daftar Anggota Kelompok', [
+              'Setelah login, Anda dapat mengakses menu "Daftar Anggota Kelompok".',
+              'Pada halaman ini, Anda akan melihat daftar anggota kelompok yang telah terdaftar.',
+              'Klik pada salah satu anggota kelompok untuk mengunjungi profil Instagram.',
+            ]),
+            _buildStep('Stopwatch', [
+              'Menu "Stopwatch" memungkinkan Anda untuk menggunakan stopwatch.',
+              'Pilih menu "Stopwatch" untuk membuka layar stopwatch.',
+              'Tekan tombol "Start" untuk memulai penghitungan waktu, "Stop" untuk menghentikan sementara, dan "Reset" untuk mengulang penghitungan.'
+            ]),
+            _buildStep('Daftar Situs Rekomendasi', [
+              'Pilih menu "Daftar Situs Rekomendasi" untuk melihat daftar situs yang direkomendasikan.',
+              'Anda dapat menjelajahi berbagai situs yang mungkin bermanfaat dan klik pada situs tertentu untuk membuka halaman tersebut.'
+              'Anda dapat menandai sebuah situs sebagai favorit dengan menekan tombol bookmark pada setiap item situs.',
+              'Situs yang ditandai sebagai favorit akan tersimpan di sini untuk referensi cepat di masa mendatang.'
 
+            ]),
+            _buildStep('Daftar Situs Favorit', [
+              'Pilih menu "Daftar Situs Favorit" untuk melihat daftar situs yang Anda tandai sebagai favorit.',
+              'Situs yang ditandai sebagai favorit akan tersimpan di sini untuk referensi cepat di masa mendatang.'
+              'Klik pada salah satu situs untuk membuka halaman situs.'
+            ]),
+            _buildStep('Logout', [
+              'Untuk keluar dari aplikasi, Anda dapat menekan tombol "Logout" yang terdapat pada navigation bar.',
+              'Pastikan untuk melakukan logout untuk menjaga keamanan akun Anda.'
+            ]),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Color(0xFF4E0189),
@@ -1102,6 +1144,34 @@ class _PanduanState extends State<Panduan> {
               backgroundColor: Color(0xFF4E0189)
           ),
         ],
+      ),
+    );
+  }
+  Widget _buildStep(String title, List<String> steps) {
+    return Card(
+      elevation: 2.0,
+      margin: const EdgeInsets.only(bottom: 16.0),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10.0),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: steps
+                  .map((step) => Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Text('- $step'),
+              ))
+                  .toList(),
+            ),
+          ],
+        ),
       ),
     );
   }
