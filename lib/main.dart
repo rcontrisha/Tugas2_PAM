@@ -669,6 +669,12 @@ class _BerandaState extends State<Beranda> {
         selectedItemColor: Color(0xFF4E0189),
         currentIndex: _currentIndex,
         onTap: (index) {
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Panduan()),
+            );
+          }
           if (index == 2) {
             _showLogoutDialog(context);
           } else {
@@ -1118,14 +1124,13 @@ class _PanduanState extends State<Panduan> {
             );
           }
           else if (index == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MyApp()),
-            );
+            _showLogoutDialog(context);
           }
-          setState(() {
-            _currentIndex = index;
-          });
+          else {
+            setState(() {
+              _currentIndex = index;
+            });
+          }
         },
         items: [
           BottomNavigationBarItem(
@@ -1147,6 +1152,41 @@ class _PanduanState extends State<Panduan> {
       ),
     );
   }
+
+  void _showLogoutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Logout'),
+          content: Text('Are you sure you want to log out?'),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text('Logout'),
+              onPressed: () {
+                // Perform logout actions here
+                // For example, navigate to login screen or clear user data
+                // Navigate to the login screen
+                Navigator.of(context).pop(); // Close the dialog
+                // Add your logout logic here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyApp()),
+                );
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   Widget _buildStep(String title, List<String> steps) {
     return Card(
       elevation: 2.0,
