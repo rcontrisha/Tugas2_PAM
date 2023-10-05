@@ -23,6 +23,7 @@ class _BerandaState extends State<Beranda> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text('Beranda'),
         backgroundColor: Color(0xFF4E0189),
         foregroundColor: Colors.white ,
